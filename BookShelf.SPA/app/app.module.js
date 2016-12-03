@@ -21,5 +21,16 @@
         };
     }]);
 
+   /*app.filter('stringConcat', function () {
+       return function (input, delimiter) {
+           if (input) {
+               return input.join(delimiter)
+           }
+           else {
+               return '';
+           }
+       };
+    });*/
+
     angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 500);
 })();
