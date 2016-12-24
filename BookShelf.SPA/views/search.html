@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div infinite-scroll="loadMore()" infinite-scroll-distance="2" infinite-scroll-immediate-check='false'>
+    <div infinite-scroll="loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check='false'>
         <div class="row" ng-repeat="item in searchResults.items" ng-if="$index % 3 == 0">
             <div class="col-md-4 portfolio-item" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-init="item = searchResults.items[i]">
                 <a href="#/details/{{item.id}}">
@@ -32,10 +32,10 @@
             </div>
         </div>
     </div>
-    <!--<div class="row" ng-show="searchResults">
+    <div class="row" ng-show="searchResults">
         <div class="col-md-8">
             <hr />
             <pre>{{searchResults | json}}</pre>
         </div>
-    </div>-->
+    </div>
 </div>

@@ -3,10 +3,8 @@
 
     angular
         .module('app')
-        .controller('detailsController', detailsController);
-
-    function detailsController($scope, $routeParams, bookService) {
-        /* jshint validthis:true */
+        .controller('detailsController', ['$scope', '$routeParams', 'bookService', function detailsController($scope, $routeParams, bookService) {
+       
         var vm = this;
         vm.title = 'detailsController';
         var id = $routeParams.id;
@@ -16,5 +14,5 @@
                 $scope.book = response.data;
             });
 
-    }
+    }])
 })();
