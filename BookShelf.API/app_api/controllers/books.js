@@ -2,8 +2,22 @@ var mongoose = require('mongoose');
 var book = mongoose.model('Book');
 
 module.exports.booksCreate = function(req, res) {
-    console.log('Creating book', req.params);
-    sendJSONresponse(res, 200, {message: "test"});
+    console.log('Creating book', req.body);
+
+    book.create({
+        title: req.body.title,
+        description: req.body.description    
+    }, function(err, location) {
+        if (err) {
+        console.log(err);
+        sendJSONresponse(res, 400, err);
+        } else {
+        console.log(location);
+        sendJSONresponse(res, 201, location);
+        }
+    });
+
+    //sendJSONresponse(res, 200, {message: "test"});
 }
 
 module.exports.booksReadOne = function(req, res) {
