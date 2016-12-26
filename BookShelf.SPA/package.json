@@ -1,0 +1,12 @@
+{
+  "name": "bookshelf.spa",
+  "version": "1.0.0",
+  "description": "bookshelf",
+  "private": true,
+  "main": "app/app.module.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "Tim Brown",
+  "license": "ISC"
+}

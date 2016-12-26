@@ -1,5 +1,5 @@
 {
-  "name": "expresstest",
+  "name": "bookshelf.api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
