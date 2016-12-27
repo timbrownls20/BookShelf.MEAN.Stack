@@ -1,8 +1,7 @@
 ﻿(function () {
     'use strict';
 
-
-    var BookService = angular.module('BookService', [])
+    angular.module('app')
     .service('bookService', ['$http', function ($http) {
 
         this.search = function(searchTerm, startIndex) {

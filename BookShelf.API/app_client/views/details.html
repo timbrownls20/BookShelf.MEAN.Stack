@@ -1,19 +1,19 @@
-﻿<div class="container" ng-controller="detailsController">
+﻿<div class="container">
 
     <div class="row">
         <div class="col-md-8">
-            <img src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="">
-            <h2>{{book.volumeInfo.title}}</h2>
-            <h4>{{book.volumeInfo.authors | stringConcat:', '}}</h4>
+            <img src="{{vm.book.volumeInfo.imageLinks.thumbnail}}" alt="">
+            <h2>{{vm.book.volumeInfo.title}}</h2>
+            <h4>{{vm.book.volumeInfo.authors | stringConcat:', '}}</h4>
            
-            <div ng-bind-html="book.volumeInfo.description | rawHtml"></div>
+            <div ng-bind-html="vm.book.volumeInfo.description | rawHtml"></div>
         </div>
     </div>
 
     <!--<div class="row">
         <div class="col-md-8">
             <hr />
-            <pre>{{book | json}}</pre>
+            <pre>{{vm.book | json}}</pre>
         </div>
     </div>-->
 

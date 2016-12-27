@@ -1,4 +1,4 @@
 
-module.exports.index = function(req, res, next) {
-  res.render('index', { title: 'Express 4' });
+module.exports.about = function(req, res, next) {
+  res.render('content', { title: 'About', message: 'Express demo page' });
 }

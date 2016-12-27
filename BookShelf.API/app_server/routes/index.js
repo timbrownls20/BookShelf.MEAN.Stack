@@ -1,9 +1,7 @@
 var express = require('express');
 var router = express.Router();
-//var ctrlMain = require('../controllers/main')
-var ctrlOthers = require('../controllers/others')
+var ctrlMain = require('../controllers/main')
 
-/* GET home page. */
-router.get('/', ctrlOthers.angularApp);
+router.get('/About', ctrlMain.about);
 
 module.exports = router;
