@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 require('./app_api/models/db');
 
-var index = require('./app_server/routes/index');
+//var index = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
 var routesApi = require('./app_api/routes/index');
 
@@ -23,11 +23,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'api_client')));
+app.use(express.static(path.join(__dirname, 'app_client')));
 
-app.use('/', index);
+//app.use('/', index);
 app.use('/users', users);
 app.use('/api', routesApi);
+
+app.use(function(req, res){
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
