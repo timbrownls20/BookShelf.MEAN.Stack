@@ -25,4 +25,26 @@
 
     angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 500);
 
+    var debugParam = getDebugParam();
+    console.log("debugParam: " + debugParam);
+    app.value("DebugOn", debugParam);
+
 })();
+
+function getDebugParam(){
+    var debugParam = getParameterByName("Debug");
+    if(!debugParam) debugParam = 0;
+    return debugParam;
+}
+
+function getParameterByName(name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}

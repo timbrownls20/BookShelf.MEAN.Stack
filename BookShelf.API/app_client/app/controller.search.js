@@ -15,6 +15,7 @@
             };
 
             $scope.loadMore = function () {
+                console.log("load more")
                 getResults();
             }
 
