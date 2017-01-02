@@ -21,31 +21,30 @@
             controller: 'libraryController'
         })
         .otherwise({ redirectTo : "/" });
+
+        // var debugParam = urlUtilsProvider.$get().getDebugParam();
+        // console.log("debugParam: " + debugParam);
+        // app.value("DebugOn", debugParam);
         
     });
 
-    angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 500);
+    // app.value("DebugOn", 0);
+    // app.run(function(urlUtilsService){
 
-    var debugParam = getDebugParam();
+    //     var debugParam = urlUtilsService.getDebugParam();
+    //     console.log("debugParam: " + debugParam);
+    //     app.value("DebugOn", debugParam);
+
+    // });
+
+    var utils = new urlUtils();
+    var debugParam = utils.getDebugParam();
     console.log("debugParam: " + debugParam);
     app.value("DebugOn", debugParam);
 
+
+    angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 500);
+
+ 
+
 })();
-
-function getDebugParam(){
-    var debugParam = getParameterByName("Debug");
-    if(!debugParam) debugParam = 0;
-    return debugParam;
-}
-
-function getParameterByName(name, url) {
-    if (!url) {
-      url = window.location.href;
-    }
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}

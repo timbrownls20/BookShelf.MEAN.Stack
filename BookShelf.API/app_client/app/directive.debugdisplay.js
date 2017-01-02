@@ -11,6 +11,9 @@
               },
               templateUrl: "/views/directives/debugDisplay.html",
               link: function(scope, elem, attrs) {
+
+                  console.log("directive Debug param " + DebugOn)
+
                   if(DebugOn == 0){
                       for(var i = 0; i < elem.length; i++)
                         elem[i].innerText = '';
