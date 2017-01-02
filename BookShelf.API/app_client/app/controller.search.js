@@ -3,35 +3,35 @@
 
     angular
         .module('app')
-        .controller('searchController', ['$scope', 'bookService', function ($scope, bookService) {
+        .controller('searchController', ['bookSearchService', function (bookSearchService) {
         
             var vm = this;
             vm.title = 'searchController';
             var page = 1;
         
-            $scope.search = function () {
-                $scope.searchResults = null;
+            vm.search = function () {
+                vm.searchResults = null;
                 getResults();
             };
 
-            $scope.loadMore = function () {
-                console.log("load more")
+            vm.loadMore = function () {
+                //console.log("load more")
                 getResults();
             }
 
             function getResults() {
 
                 page += 1;
-                bookService.search($scope.searchTerm, getStartIndex())
+                bookSearchService.search(vm.searchTerm, getStartIndex())
                     .then(function (response) {
 
-                        if ($scope.searchResults) {
+                        if (vm.searchResults) {
                             for (var i = 0; i < response.data.items.length; i++) {
-                                $scope.searchResults.items.push(response.data.items[i]);
+                                vm.searchResults.items.push(response.data.items[i]);
                             }
                         }
                         else {
-                            $scope.searchResults = response.data;
+                            vm.searchResults = response.data;
                         }
                     });
             }

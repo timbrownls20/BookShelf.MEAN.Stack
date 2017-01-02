@@ -3,13 +3,13 @@
 
     angular
         .module('app')
-        .controller('detailsController', ['$routeParams', 'bookService', function detailsController($routeParams, bookService) {
+        .controller('detailsController', ['$routeParams', 'bookSearchService', function detailsController($routeParams, bookSearchService) {
        
         var vm = this;
         vm.title = 'detailsController';
         var id = $routeParams.id;
         
-        bookService.get(id)
+        bookSearchService.get(id)
             .then(function (response) {
                 vm.book = response.data;
             });

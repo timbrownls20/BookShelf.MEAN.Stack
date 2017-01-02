@@ -8,7 +8,8 @@
         $routeProvider
         .when("/", {
             templateUrl: "/views/search.html",
-            controller: 'searchController'
+            controller: 'searchController',
+            controllerAs: 'vm'
         })
         .when("/details/:id", {
             templateUrl: '/views/details.html',
