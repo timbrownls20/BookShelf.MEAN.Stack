@@ -1,1 +1,15 @@
-<h1>Library</h1>
+<div class="container" ng-init="vm.getLibrary()">
+
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Library</h1>
+        </div>
+        
+    </div>
+    <div class="row" ng-repeat="item in vm.library" >
+        <h3>{{item.title}}</h3>       
+        <p>{{item.description | limitTo:200}}</p>
+    </div>
+        
+    <debug-display display="vm.library"/>
+</div>

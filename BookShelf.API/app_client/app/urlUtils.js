@@ -11,7 +11,7 @@
 
             var getDebugParam = function (){
                 var debugParam = getParameterByName("Debug");
-                if(!debugParam) debugParam = 0;
+                if(!debugParam) debugParam = 1; //.. on by default
                 return debugParam;
             };
 

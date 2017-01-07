@@ -18,7 +18,8 @@
         })
         .when("/library", {
             templateUrl: "/views/library.html",
-            controller: 'libraryController'
+            controller: 'libraryController',
+            controllerAs: 'vm'
         })
         .otherwise({ redirectTo : "/" });
 
