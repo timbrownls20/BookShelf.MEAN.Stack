@@ -6,6 +6,8 @@
 .imageClip {
     height:200px;
     overflow:hidden;
+    /*display: block;
+    margin: 0 auto;*/
 }
 
 .loader {

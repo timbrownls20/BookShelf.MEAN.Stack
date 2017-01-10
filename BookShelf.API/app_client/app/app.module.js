@@ -16,7 +16,12 @@
             controller: 'detailsController',
             controllerAs: 'vm'
         })
-        .when("/library", {
+        .when("/library-add/:id", {
+            templateUrl: '/views/library-add.html'
+            // controller: 'libraryController',
+            // controllerAs: 'vm'
+        })
+        .when("/library-list", {
             templateUrl: "/views/library.html",
             controller: 'libraryController',
             controllerAs: 'vm'
