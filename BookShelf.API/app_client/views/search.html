@@ -25,10 +25,10 @@
         <div class="row" ng-repeat="item in vm.searchResults.items" ng-if="$index % 3 == 0">
             <div class="col-md-4 portfolio-item" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-init="item = vm.searchResults.items[i]">
                 <div class="clearfix">                
-                    <a class="btn btn-default pull-right" href="#/library-add/{{item.id}}" >
+                    <a class="btn btn-default pull-right" href="library-add/{{item.id}}" >
                         <span class="glyphicon glyphicon-plus" ></span>
                     </a>
-                    <a href="#/details/{{item.id}}" class="pull-left">
+                    <a href="details/{{item.id}}" class="pull-left">
                         <img class="imageClip" src="{{item.volumeInfo.imageLinks.thumbnail}}" alt="">
                     </a>
                 </div>

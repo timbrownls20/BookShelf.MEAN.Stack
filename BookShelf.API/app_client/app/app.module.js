@@ -3,7 +3,7 @@
 
     var app = angular.module('app', ['ngRoute', 'infinite-scroll']);
     
-    app.config(function ($routeProvider) {
+    app.config(function ($routeProvider, $locationProvider) {
         
         $routeProvider
         .when("/", {
@@ -27,6 +27,8 @@
             controllerAs: 'vm'
         })
         .otherwise({ redirectTo : "/" });
+
+        $locationProvider.html5Mode(true); //.hashPrefix('!');
 
         // var debugParam = urlUtilsProvider.$get().getDebugParam();
         // console.log("debugParam: " + debugParam);
