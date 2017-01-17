@@ -8,10 +8,13 @@
         var serviceRoot = "http://localhost:3000/api/"
 
         this.list = function() {
-
             var url = serviceRoot + "books";
-            //console.log(url);
             return $http.get(url);
+        };
+
+        this.save = function(data) {
+            var url = serviceRoot + "book";
+            return $http.post(url, data);
         };
 
         // return 

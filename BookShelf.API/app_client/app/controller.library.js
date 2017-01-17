@@ -3,8 +3,12 @@
 
     angular
         .module('app')
-        .controller('libraryController', ['bookPersistService', function libraryController(bookPersistService) {
+        .controller('libraryController', ['$routeParams', 'bookPersistService', 'bookSearchService',  
+                        function libraryController($routeParams, bookPersistService, bookSearchService) {
        
+        console.log('library controller');
+
+        var id = $routeParams.id;
         var vm = this;
         vm.title = 'libraryController';
 
@@ -14,9 +18,28 @@
                 .then(function (response) {
                     vm.library = response.data;
                 });
-        }
+        };
 
-        //return { getLibrary: vm.getLibrary  }
+        this.findBook = function() {
+
+            console.log('findBook');
+
+            bookSearchService.get(id)
+                .then(function (response) {
+                    vm.book = response.data;
+                });
+        };
+
+        this.onSubmit = function() {
+            console.log('save book to library');
+
+            var bookToAdd = {
+                title: vm.book.volumeInfo.title,
+                description: vm.book.volumeInfo.description
+            };
+
+            bookPersistService.save(bookToAdd)
+        };
 
     }])
 })();
