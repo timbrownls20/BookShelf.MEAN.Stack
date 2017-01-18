@@ -3,8 +3,8 @@
 
     angular
         .module('app')
-        .controller('libraryController', ['$routeParams', 'bookPersistService', 'bookSearchService',  
-                        function libraryController($routeParams, bookPersistService, bookSearchService) {
+        .controller('libraryController', ['$routeParams', '$location', 'bookPersistService', 'bookSearchService',  
+                        function libraryController($routeParams, $location, bookPersistService, bookSearchService) {
        
         console.log('library controller');
 
@@ -39,6 +39,9 @@
             };
 
             bookPersistService.save(bookToAdd)
+                .then(function (response) {
+                    $location.path('/library-list')
+                });
         };
 
     }])
