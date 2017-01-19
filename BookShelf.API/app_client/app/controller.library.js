@@ -49,8 +49,11 @@
             };
 
             bookPersistService.save(bookToAdd)
-                .then(function (response) {
+                .success(function (response) {
                     $location.path('/library-list')
+                })
+                .error(function(err){
+                    vm.Error = err;
                 });
         };
 

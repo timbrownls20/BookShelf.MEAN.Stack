@@ -6,6 +6,10 @@
         </div>
         
     </div>
+    <div class="row alert alert-warning alert-dismissible" role="alert" ng-show="vm.Error">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Warning!</strong> {{vm.Error}}
+    </div>
     <div class="row">
         <div class="col-md-8">
             <img src="{{vm.book.volumeInfo.imageLinks.thumbnail}}" alt="">
