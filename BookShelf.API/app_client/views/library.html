@@ -1,14 +1,20 @@
 <div class="container" ng-init="vm.getLibrary()">
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h1>Library</h1>
+            <hr />
         </div>
-        
     </div>
     <div class="row" ng-repeat="item in vm.library" >
-        <h3>{{item.title}}</h3>       
+        <div class="clearfix">  
+            <h3 class="pull-left">{{item.title}}</h3>
+            <a class="btn btn-default pull-right" ng-click="vm.removeBook(item._id)" >
+                <span class="glyphicon glyphicon-remove" ></span>
+            </a>
+        </div>
         <p>{{item.description | limitTo:200}}</p>
+        <hr/>
     </div>
         
     <debug-display display="vm.book"/>

@@ -17,9 +17,10 @@
             return $http.post(url, data);
         };
 
-        // return 
-        // {
-        //     list: this.list
-        // }
+        this.delete = function(id) {
+            var url = serviceRoot + "book/" + id;
+            return $http.delete(url);
+        };
+
     }]);
 })();

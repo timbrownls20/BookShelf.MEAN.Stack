@@ -23,20 +23,15 @@ module.exports.booksList = function(req, res) {
     console.log('listing all books', req.params);
     
     book.find({}, function(err, books) {
-        
                 
         if (err) {
-            //console.log('TB error');
             console.log(err);
             sendJSONresponse(res, 400, err);
         }   
         else {
-            //console.log('TB test');
             console.log(books);
             sendJSONresponse(res, 200, books);
         }
-
-        
     });
 
 }
@@ -53,7 +48,19 @@ module.exports.booksUpdate = function(req, res) {
 
 module.exports.booksDelete = function(req, res) {
     console.log('deleting book', req.params);
-    sendJSONresponse(res, 200, {message: "test"});
+
+
+    book.delete({_id: req.params.bookid}, function(err, books) {
+                
+        if (err) {
+            console.log(err);
+            sendJSONresponse(res, 400, err);
+        }   
+        else {
+            console.log('successful delete');
+            sendJSONresponse(res, 204, null);
+        }
+    });
 }
 
 //.. helper functions

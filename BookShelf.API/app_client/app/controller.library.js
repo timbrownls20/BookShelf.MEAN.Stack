@@ -30,6 +30,19 @@
                 });
         };
 
+        this.removeBook = function(id) {
+            console.log('removing book ' + id);
+
+            bookPersistService.delete(id)
+                .then(function (response) {
+                    //..TB TODO more here 
+                    
+                    console.log('deleted ....')
+
+
+                });
+        };
+
         this.onSubmit = function() {
             console.log('save book to library');
 
