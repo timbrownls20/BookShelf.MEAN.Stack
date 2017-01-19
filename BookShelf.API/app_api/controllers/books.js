@@ -50,7 +50,7 @@ module.exports.booksDelete = function(req, res) {
     console.log('deleting book', req.params);
 
 
-    book.delete({_id: req.params.bookid}, function(err, books) {
+    book.remove({_id: req.params.bookid}, function(err, books) {
                 
         if (err) {
             console.log(err);

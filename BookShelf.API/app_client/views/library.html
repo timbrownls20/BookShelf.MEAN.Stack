@@ -9,7 +9,7 @@
     <div class="row" ng-repeat="item in vm.library" >
         <div class="clearfix">  
             <h3 class="pull-left">{{item.title}}</h3>
-            <a class="btn btn-default pull-right" ng-click="vm.removeBook(item._id)" >
+            <a class="btn btn-default pull-right" ng-click="vm.removeBook(item._id, $index)" >
                 <span class="glyphicon glyphicon-remove" ></span>
             </a>
         </div>

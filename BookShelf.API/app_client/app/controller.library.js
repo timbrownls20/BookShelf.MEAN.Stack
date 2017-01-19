@@ -30,16 +30,13 @@
                 });
         };
 
-        this.removeBook = function(id) {
+        this.removeBook = function(id, index) {
             console.log('removing book ' + id);
 
             bookPersistService.delete(id)
                 .then(function (response) {
-                    //..TB TODO more here 
-                    
-                    console.log('deleted ....')
-
-
+                    console.log('deleted ....');
+                    vm.library.splice(index, 1);
                 });
         };
 
