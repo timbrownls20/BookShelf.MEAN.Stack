@@ -10,12 +10,15 @@
             var page = 1;
         
             vm.search = function () {
+
+                vm.Info = "Searching ...";
                 vm.searchResults = null;
                 getResults();
+       
             };
 
             vm.loadMore = function () {
-                //console.log("load more")
+                //console.log("load more")x
                 getResults();
             }
 
@@ -33,7 +36,11 @@
                         else {
                             vm.searchResults = response.data;
                         }
+
+                        vm.Info = null;
                     });
+
+         
             }
 
             function getStartIndex() {
