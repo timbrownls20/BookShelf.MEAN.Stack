@@ -8,17 +8,21 @@
             var vm = this;
             vm.title = 'searchController';
             var page = 1;
-        
-            vm.search = function () {
+            
+            vm.searchTerm = bookSearchService.searchTerm;
+            //vm.Info = vm.searchTerm;
 
-                vm.Info = "Searching ...";
-                vm.searchResults = null;
-                getResults();
+            vm.search = function () {
+                
+                if(vm.searchTerm){
+                    vm.Info = "Searching ...";
+                    vm.searchResults = null;
+                    getResults();
+                }
        
             };
 
             vm.loadMore = function () {
-                //console.log("load more")x
                 getResults();
             }
 
@@ -39,8 +43,6 @@
 
                         vm.Info = null;
                     });
-
-         
             }
 
             function getStartIndex() {

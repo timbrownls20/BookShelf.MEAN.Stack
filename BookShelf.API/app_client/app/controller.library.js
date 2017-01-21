@@ -27,7 +27,7 @@
             bookSearchService.get(id)
                 .then(function (response) {
                     vm.book = response.data;
-                });
+                }); 
         };
 
         this.removeBook = function(id, index) {
@@ -35,7 +35,8 @@
 
             bookPersistService.delete(id)
                 .then(function (response) {
-                    console.log('deleted ....');
+                    //console.log('deleted ....');
+                    vm.Info = "Book deleted from library";
                     vm.library.splice(index, 1);
                 });
         };
