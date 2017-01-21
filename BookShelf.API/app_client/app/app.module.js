@@ -39,10 +39,7 @@
     // console.log("debugParam: " + debugParam);
     // app.value("DebugOn", debugParam);
 
-    app.constant("appConfig", {
-        apiRoot: "http://localhost:3000/api/",
-        debug: 0
-    });
+    app.constant("appConfig", window.appConfig);
 
     angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 500);
 
