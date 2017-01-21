@@ -3,9 +3,9 @@
 
     
     angular.module('app')
-    .service('bookPersistService', ['$http', function ($http) {
+    .service('bookPersistService', ['$http', 'appConfig', function ($http, appConfig) {
 
-        var serviceRoot = "http://localhost:3000/api/"
+        var serviceRoot = appConfig.apiRoot;
 
         this.list = function() {
             var url = serviceRoot + "books";

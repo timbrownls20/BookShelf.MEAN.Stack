@@ -3,7 +3,7 @@
 
     angular
       .module('app')
-      .directive('debugDisplay', ['DebugOn', function(DebugOn){
+      .directive('debugDisplay', ['appConfig', function(appConfig){
           return {
               scope:
               {
@@ -12,9 +12,9 @@
               templateUrl: "/views/directives/debugDisplay.html",
               link: function(scope, elem, attrs) {
 
-                  console.log("directive Debug param " + DebugOn)
+                  //console.log("directive Debug param " + appConfig.debug);
 
-                  if(DebugOn == 0){
+                  if(appConfig.debug == 0){
                       for(var i = 0; i < elem.length; i++)
                         elem[i].innerText = '';
                   }

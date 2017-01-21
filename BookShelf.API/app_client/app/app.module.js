@@ -30,29 +30,21 @@
 
         $locationProvider.html5Mode(true); //.hashPrefix('!');
 
-        // var debugParam = urlUtilsProvider.$get().getDebugParam();
-        // console.log("debugParam: " + debugParam);
-        // app.value("DebugOn", debugParam);
+       
         
     });
 
-    // app.value("DebugOn", 0);
-    // app.run(function(urlUtilsService){
+    // var utils = new urlUtils();
+    // var debugParam = utils.getDebugParam();
+    // console.log("debugParam: " + debugParam);
+    // app.value("DebugOn", debugParam);
 
-    //     var debugParam = urlUtilsService.getDebugParam();
-    //     console.log("debugParam: " + debugParam);
-    //     app.value("DebugOn", debugParam);
-
-    // });
-
-    var utils = new urlUtils();
-    var debugParam = utils.getDebugParam();
-    console.log("debugParam: " + debugParam);
-    app.value("DebugOn", debugParam);
-
+    app.constant("appConfig", {
+        apiRoot: "http://localhost:3000/api/",
+        debug: 0
+    });
 
     angular.module('infinite-scroll').value('THROTTLE_MILLISECONDS', 500);
 
- 
 
 })();
