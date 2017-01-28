@@ -49,8 +49,8 @@
                 pageCount: vm.book.volumeInfo.pageCount,
                 publisher: vm.book.volumeInfo.publisher,
                 publishedDate: vm.book.volumeInfo.publishedDate,
+                thumbnail: vm.book.volumeInfo.imageLinks.thumbnail,
                 authors: vm.book.volumeInfo.authors
-
             };
 
             bookPersistService.save(bookToAdd)

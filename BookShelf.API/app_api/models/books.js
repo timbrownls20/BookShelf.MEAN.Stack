@@ -28,6 +28,10 @@ var bookSchema = new mongoose.Schema({
         type: Date,
         required: false
     },
+    thumbnail: {
+        type: String,
+        required: false
+    },
     authors: [authorSchema]
 
 });
