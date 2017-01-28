@@ -6,19 +6,21 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Library</h1>
-            <hr />
+            <h3>
+                <small ng-if="vm.library.length > 0">Books in library {{vm.library.length}}</small>
+                <small ng-if="vm.library.length == 0">No books in library</small>
+            </h3>
+
         </div>
     </div>
-        
-    <div class="row" ng-repeat="item in vm.library" >
+    <div class="row" ng-repeat="item in vm.library | orderBy:'title'" >
         <div class="clearfix">  
             <h3 class="pull-left">{{item.title}}</h3>
             <a class="btn btn-default pull-right" ng-click="vm.removeBook(item._id, $index)" >
                 <span class="glyphicon glyphicon-remove" ></span>
             </a>
         </div>
-        <!--<p>{{item.description | limitTo:200}}</p>-->
-        <p ng-bind-html="item.description | rawHtml"></p>
+        <p ng-bind-html="item.description | limitTo:200 | rawHtml"></p>
         <hr/>
     </div>
         

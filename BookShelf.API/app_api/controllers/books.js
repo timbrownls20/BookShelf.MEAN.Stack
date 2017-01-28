@@ -6,7 +6,11 @@ module.exports.booksCreate = function(req, res) {
 
     book.create({
         title: req.body.title,
-        description: req.body.description    
+        description: req.body.description,
+        pageCount: req.body.pageCount,
+        publisher: req.body.publisher,
+        publishedDate: req.body.publishedDate
+
     }, function(err, location) {
         if (err) {
             console.log(err);

@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-md-8">
-            <h1>Library Add</h1>
+            <h2>Add '{{vm.book.volumeInfo.title}}' to library</h2>
         </div>
         
     </div>
@@ -13,26 +13,34 @@
             <img src="{{vm.book.volumeInfo.imageLinks.thumbnail}}" alt="">
         </div>
     </div>
+
     <form ng-submit="vm.onSubmit()">
         <div class="form-group row">
             <label for="txtTitle">Title</label>
-            <input type="text" name="title" class="form-control" id="txtTitle" value="{{vm.book.volumeInfo.title}}">
+            <input type="text" name="title" class="form-control" id="txtTitle" ng-model="vm.book.volumeInfo.title" required>
         </div>
         <div class="form-group row">
             <label for="txtDescription">Description</label>
-            <textarea name="description" id="txtDescription" class="form-control" rows="10" >{{vm.book.volumeInfo.description}}</textarea>
+            <textarea name="description" id="txtDescription" class="form-control" rows="10" ng-model="vm.book.volumeInfo.description" ></textarea>
         </div>
         <div class="form-group row">
             <label for="txtPublisher">Publisher</label>
-            <input type="text" name="title" class="form-control" id="txtPublisher" value="{{vm.book.volumeInfo.publisher}}">
+            <input type="text" name="title" class="form-control" id="txtPublisher" ng-model="vm.book.volumeInfo.publisher">
         </div>
         <div class="form-group row">
             <label for="txtPublishYear">Publish Year</label>
-            <input type="text" name="title" class="form-control" id="txtPublishYear" value="{{vm.book.volumeInfo.publishedDate}}">
+            <input type="text" name="title" class="form-control" id="txtPublishYear" ng-model="vm.book.volumeInfo.publishedDate">
         </div>
         <div class="form-group row">
             <label for="txtPageCount">Page Count</label>
-            <input type="text" name="title" class="form-control" id="txtPageCount" value="{{vm.book.volumeInfo.pageCount}}">
+            <input type="text" name="title" class="form-control" id="txtPageCount" ng-model="vm.book.volumeInfo.pageCount">
+        </div>
+        <div class="form-group row">
+            <label for="divAuthors">Authors</label>
+           
+        </div>
+         <div class="form-group row" ng-repeat="item in vm.book.volumeInfo.authors" id="divAuthors">
+            <input type="text" name="title" class="form-control" id="txtAuthor{{$index + 1}}" value="{{item}}">
         </div>
         <div class="form-group row">
             <input type="submit" id="submit" class="btn btn-primary" value="Save"/>

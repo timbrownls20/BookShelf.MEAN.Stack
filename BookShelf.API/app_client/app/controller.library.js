@@ -46,7 +46,11 @@
 
             var bookToAdd = {
                 title: vm.book.volumeInfo.title,
-                description: vm.book.volumeInfo.description
+                description: vm.book.volumeInfo.description,
+                pageCount: vm.book.volumeInfo.pageCount,
+                publisher: vm.book.volumeInfo.publisher,
+                publishedDate: vm.book.volumeInfo.publishedDate
+
             };
 
             bookPersistService.save(bookToAdd)

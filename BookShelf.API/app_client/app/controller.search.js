@@ -10,7 +10,6 @@
             var page = 1;
             
             vm.searchTerm = bookSearchService.searchTerm;
-            //vm.Info = vm.searchTerm;
 
             vm.search = function () {
                 
