@@ -30,6 +30,8 @@
                 page += 1;
                 bookSearchService.search(vm.searchTerm, getStartIndex())
                     .then(function (response) {
+                        
+                        vm.rawResponse = response.data;
 
                         if (vm.searchResults) {
                             for (var i = 0; i < response.data.items.length; i++) {
@@ -38,7 +40,10 @@
                         }
                         else {
                             var items = bookPersistService.mapArray(response.data.items);
-                            vm.searchResults = {items: items};
+                            vm.searchResults = {
+                                items: items,
+                                totalItems: response.data.totalItems
+                            };
                         }
 
                         vm.Info = null;
