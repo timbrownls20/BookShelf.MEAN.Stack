@@ -1,0 +1,14 @@
+  <div class="clearfix">                
+    <a class="btn btn-default pull-right" href="library-add/{{book.googleId}}" ng-if="addtolibrary == true">
+        <span class="glyphicon glyphicon-plus" ></span>
+    </a>
+    <a class="btn btn-default pull-right" ng-click="vm.removeBook(book._id, $index)" ng-if="remove == true" >
+        <span class="glyphicon glyphicon-remove" ></span>
+    </a>
+    <a href="details/{{book.googleId}}" class="pull-left" >
+        <img class="imageClip" src="{{book.thumbnail}}" alt="">
+    </a>
+</div>
+<h3>{{index + 1}}. {{book.title}}</h3>
+<h4>{{book.authors | stringConcat:', '}}</h4>
+<p>{{book.description | limitTo:200}}</p>
