@@ -4,14 +4,23 @@ var book = mongoose.model('Book');
 module.exports.booksCreate = function(req, res) {
     console.log('Creating book', req.body);
 
-    book.create({
+  
+
+    var bookToSave = {
         title: req.body.title,
         description: req.body.description,
         pageCount: req.body.pageCount,
         publisher: req.body.publisher,
         publishedDate: req.body.publishedDate
+    };
 
-    }, function(err, location) {
+    bookToSave.authors = [];
+    for (var i=0; i < req.body.authors.length; i++) {
+        var authorToSave = {name: req.body.authors[i]};
+        bookToSave.authors.push(authorToSave);
+    }
+
+    book.create(bookToSave, function(err, location) {
         if (err) {
             console.log(err);
             sendJSONresponse(res, 400, err);

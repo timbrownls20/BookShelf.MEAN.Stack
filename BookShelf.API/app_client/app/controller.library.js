@@ -35,7 +35,6 @@
 
             bookPersistService.delete(id)
                 .then(function (response) {
-                    //console.log('deleted ....');
                     vm.Info = "Book deleted from library";
                     vm.library.splice(index, 1);
                 });
@@ -49,7 +48,8 @@
                 description: vm.book.volumeInfo.description,
                 pageCount: vm.book.volumeInfo.pageCount,
                 publisher: vm.book.volumeInfo.publisher,
-                publishedDate: vm.book.volumeInfo.publishedDate
+                publishedDate: vm.book.volumeInfo.publishedDate,
+                authors: vm.book.volumeInfo.authors
 
             };
 

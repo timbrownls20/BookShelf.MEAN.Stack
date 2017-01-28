@@ -14,6 +14,8 @@
         </div>
     </div>
 
+    <h3>{{vm.book.volumeInfo.authors}}</h3>
+
     <form ng-submit="vm.onSubmit()">
         <div class="form-group row">
             <label for="txtTitle">Title</label>
@@ -40,7 +42,7 @@
            
         </div>
          <div class="form-group row" ng-repeat="item in vm.book.volumeInfo.authors" id="divAuthors">
-            <input type="text" name="title" class="form-control" id="txtAuthor{{$index + 1}}" value="{{item}}">
+            <input type="text" name="title" class="form-control" id="txtAuthor{{$index}}" ng-model="vm.book.volumeInfo.authors[$index]">
         </div>
         <div class="form-group row">
             <input type="submit" id="submit" class="btn btn-primary" value="Save"/>
