@@ -3,7 +3,7 @@
 
     angular
         .module('app')
-        .controller('searchController', ['bookSearchService', function (bookSearchService) {
+        .controller('searchController', ['bookSearchService', 'bookPersistService', function (bookSearchService, bookPersistService) {
         
             var vm = this;
             vm.title = 'searchController';
@@ -33,11 +33,12 @@
 
                         if (vm.searchResults) {
                             for (var i = 0; i < response.data.items.length; i++) {
-                                vm.searchResults.items.push(response.data.items[i]);
+                                vm.searchResults.items.push(bookPersistService.map(response.data.items[i]));
                             }
                         }
                         else {
-                            vm.searchResults = response.data;
+                            var items = bookPersistService.mapArray(response.data.items);
+                            vm.searchResults = {items: items};
                         }
 
                         vm.Info = null;

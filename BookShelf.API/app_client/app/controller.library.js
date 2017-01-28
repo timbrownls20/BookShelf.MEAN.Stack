@@ -26,7 +26,7 @@
 
             bookSearchService.get(id)
                 .then(function (response) {
-                    vm.book = response.data;
+                    vm.book = bookPersistService.map(response.data);
                 }); 
         };
 
@@ -43,17 +43,7 @@
         this.onSubmit = function() {
             console.log('save book to library');
 
-            var bookToAdd = {
-                title: vm.book.volumeInfo.title,
-                description: vm.book.volumeInfo.description,
-                pageCount: vm.book.volumeInfo.pageCount,
-                publisher: vm.book.volumeInfo.publisher,
-                publishedDate: vm.book.volumeInfo.publishedDate,
-                thumbnail: vm.book.volumeInfo.imageLinks.thumbnail,
-                authors: vm.book.volumeInfo.authors
-            };
-
-            bookPersistService.save(bookToAdd)
+            bookPersistService.save(vm.book)
                 .success(function (response) {
                     $location.path('/library-list')
                 })

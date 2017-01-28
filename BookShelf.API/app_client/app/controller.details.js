@@ -3,7 +3,8 @@
 
     angular
         .module('app')
-        .controller('detailsController', ['$routeParams', 'bookSearchService', function detailsController($routeParams, bookSearchService) {
+        .controller('detailsController', ['$routeParams', 'bookSearchService', 'bookPersistService', 
+                    function detailsController($routeParams, bookSearchService, bookPersistService) {
        
         var vm = this;
         vm.title = 'detailsController';
@@ -11,7 +12,7 @@
         
         bookSearchService.get(id)
             .then(function (response) {
-                vm.book = response.data;
+                vm.book = bookPersistService.map(response.data);
             });
 
     }])

@@ -1,0 +1,1 @@
+Refactor out book display items into directives
