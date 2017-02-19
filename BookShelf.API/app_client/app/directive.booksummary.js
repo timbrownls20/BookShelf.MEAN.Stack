@@ -7,10 +7,12 @@
           return {
               scope:
               {
-                  book : "=book",
-                  addtolibrary : "=addtolibrary",
-                  remove : "=remove",
-                  index : "=index"
+                  book : '=book',
+                  addtolibrary : '=addtolibrary',
+                  remove : '=remove',
+                  index : '=index',
+                  removeBook : '&',
+                  testMethodInternal : '&testMethod'
               },
               templateUrl: "/views/directives/bookSummary.html"
           };

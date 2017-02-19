@@ -52,5 +52,9 @@
                 });
         };
 
+        this.testMethod = function(){
+            console.log("testMethod");
+        }
+
     }])
 })();

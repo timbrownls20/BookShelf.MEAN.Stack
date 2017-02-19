@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Library</h1>
+            <h1 >Library</h1>
             <h3>
                 <small ng-if="vm.library.length > 0">Books in library {{vm.library.length}}</small>
                 <small ng-if="vm.library.length == 0">No books in library</small>
@@ -14,8 +14,8 @@
         </div>
     </div>
     <div class="row" ng-repeat="item in vm.library | orderBy:'title'" ng-if="$index % 3 == 0">
-        <div class="col-md-4 portfolio-item" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-init="item = vm.library[i]">
-            <book-summary book="item" remove="true"></book-summary>
+        <div class="col-md-4 portfolio-item" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-init="item = vm.library[i]" >
+            <book-summary book="item" remove="true" removeBook="vm.removeBook(item.id, $index)" test-method="vm.testMethod()" ></book-summary>
         </div>
     </div>
 

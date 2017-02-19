@@ -2,7 +2,9 @@
     <a class="btn btn-default pull-right" href="library-add/{{book.googleId}}" ng-if="addtolibrary == true">
         <span class="glyphicon glyphicon-plus" ></span>
     </a>
-    <a class="btn btn-default pull-right" ng-click="vm.removeBook(book._id, $index)" ng-if="remove == true" >
+    <!--<a class="btn btn-default pull-right" ng-click="removeBook(book._id, $index)" ng-if="remove == true" >-->
+    <a class="btn btn-default pull-right" ng-click="testMethodInternal()" ng-if="remove == true" >
+        
         <span class="glyphicon glyphicon-remove" ></span>
     </a>
     <a href="details/{{book.googleId}}" class="pull-left" >
