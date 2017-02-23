@@ -2,9 +2,8 @@
     <a class="btn btn-default pull-right" href="library-add/{{book.googleId}}" ng-if="addtolibrary == true">
         <span class="glyphicon glyphicon-plus" ></span>
     </a>
-    <!--<a class="btn btn-default pull-right" ng-click="removeBook(book._id, $index)" ng-if="remove == true" >-->
-    <a class="btn btn-default pull-right" ng-click="testMethodInternal()" ng-if="remove == true" >
-        
+    <a class="btn btn-default pull-right" ng-click="removeBook({id: book._id, index: index})" ng-if="remove == true" >
+    <!--<a class="btn btn-default pull-right" ng-click="testMethodInternal()" ng-if="remove == true" >-->
         <span class="glyphicon glyphicon-remove" ></span>
     </a>
     <a href="details/{{book.googleId}}" class="pull-left" >
@@ -14,3 +13,4 @@
 <h3>{{index + 1}}. {{book.title}}</h3>
 <h4>{{book.authors | stringConcat:', '}}</h4>
 <p>{{book.description | limitTo:200}}</p>
+<debug-display display="$scope"></debug-display>

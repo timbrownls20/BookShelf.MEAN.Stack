@@ -31,6 +31,8 @@
         };
 
         this.removeBook = function(id, index) {
+            
+            console.log('index: ' + index);
             console.log('removing book ' + id);
 
             bookPersistService.delete(id)

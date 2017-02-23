@@ -15,20 +15,9 @@
     </div>
     <div class="row" ng-repeat="item in vm.library | orderBy:'title'" ng-if="$index % 3 == 0">
         <div class="col-md-4 portfolio-item" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-init="item = vm.library[i]" >
-            <book-summary book="item" remove="true" removeBook="vm.removeBook(item.id, $index)" test-method="vm.testMethod()" ></book-summary>
+            <book-summary book="item" remove="true" index="$index" remove-book="vm.removeBook(id, index)" test-method="vm.testMethod()" ></book-summary>
         </div>
     </div>
 
-    <!--<div class="row" ng-repeat="item in vm.library | orderBy:'title'" >
-        <div class="clearfix">  
-            <h3 class="pull-left">{{item.title}}</h3>
-            <a class="btn btn-default pull-right" ng-click="vm.removeBook(item._id, $index)" >
-                <span class="glyphicon glyphicon-remove" ></span>
-            </a>
-        </div>
-        <p ng-bind-html="item.description | limitTo:200 | rawHtml"></p>
-        <hr/>
-    </div>-->
-        
-    <debug-display display="vm.book"/>
+    <debug-display display="vm.library"></debug-display>
 </div>
