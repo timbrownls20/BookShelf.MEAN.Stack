@@ -11,8 +11,7 @@
                   addtolibrary : '=addtolibrary',
                   remove : '=remove',
                   index : '=index',
-                  removeBook : '&removeBook',
-                  testMethodInternal : '&testMethod'
+                  removeBook : '&removeBook'
               },
               templateUrl: "/views/directives/bookSummary.html"
           };

@@ -53,10 +53,5 @@
                     vm.Error = err;
                 });
         };
-
-        this.testMethod = function(){
-            console.log("testMethod");
-        }
-
     }])
 })();

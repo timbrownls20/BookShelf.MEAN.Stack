@@ -32,8 +32,16 @@
                 publisher: googleBook.volumeInfo.publisher,
                 publishedDate: googleBook.volumeInfo.publishedDate,
                 thumbnail: googleBook.volumeInfo.imageLinks.thumbnail,
-                authors: googleBook.volumeInfo.authors
+                //authors: googleBook.volumeInfo.authors
+                authors: []
             };
+
+            if(googleBook.volumeInfo.authors != null){
+                googleBook.volumeInfo.authors.forEach(function(author) {
+                    mappedBook.authors.push({name: author})
+                }, this);
+            }
+
             return mappedBook;
         };
 
