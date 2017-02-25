@@ -15,7 +15,7 @@ module.exports.booksCreate = function(req, res) {
 
     bookToSave.authors = [];
     for (var i=0; i < req.body.authors.length; i++) {
-        var authorToSave = {name: req.body.authors[i]};
+        var authorToSave = {name: req.body.authors[i].name};
         bookToSave.authors.push(authorToSave);
     }
 

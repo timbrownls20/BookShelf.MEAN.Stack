@@ -40,7 +40,7 @@
            
         </div>
          <div class="form-group row" ng-repeat="item in vm.book.authors" id="divAuthors">
-            <input type="text" name="title" class="form-control" id="txtAuthor{{$index}}" ng-model="vm.book.authors[$index]">
+            <input type="text" name="title" class="form-control" id="txtAuthor{{$index}}" ng-model="vm.book.authors[$index].name">
         </div>
         <div class="form-group row">
             <input type="submit" id="submit" class="btn btn-primary" value="Save"/>
