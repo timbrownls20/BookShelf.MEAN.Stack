@@ -11,8 +11,7 @@
         </a>
     </div>
     <h3>{{index + 1}}. {{book.title}}</h3>
-    <!--<h4>{{book.authors | projectobject: 'name' | stringconcat:', '}}</h4>-->
     <h4>{{book.authors | projectobject: 'name' | stringconcat:', '}}</h4>
-    <p>{{book.description | limitTo:200}}</p>
+    <p>{{book.description | limitTo:200 | rawhtml }}</p>
     <debug-display display="book"></debug-display>
 </div>
