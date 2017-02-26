@@ -1,3 +1,7 @@
-Refactor out book display items into directives
-improve booksummary directive to just use the attribute without value
-fix library remove functionality now has been moved to scope
+DEV
+split filters into separate files
+ratings control
+dates started and finished for library
+
+BUGS
+remove from library update doesn't work properly
