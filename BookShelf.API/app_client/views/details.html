@@ -4,9 +4,9 @@
         <div class="col-md-8">
             <img src="{{vm.book.thumbnail}}" alt="">
             <h2>{{vm.book.title}}</h2>
-            <h4>{{vm.book.authors | stringConcat:', '}}</h4>
+            <h4>{{vm.book.authors | stringconcat:', '}}</h4>
            
-            <div ng-bind-html="vm.book.description | rawHtml"></div>
+            <div ng-bind-html="vm.book.description | rawhtml"></div>
         </div>
     </div>
     <debug-display display="vm.book"/>
