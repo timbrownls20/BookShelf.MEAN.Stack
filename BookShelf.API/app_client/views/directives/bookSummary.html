@@ -1,9 +1,12 @@
+
+<!--<h2>Is library book {{library}}</h2>-->
+
 <div ng-if="book != null">  
     <div class="clearfix">                
-        <a class="btn btn-default pull-right" href="library-add/{{book.googleId}}" ng-if="addtolibrary == true">
+        <a class="btn btn-default pull-right" href="library-add/{{book.googleId}}" ng-if="library == false">
             <span class="glyphicon glyphicon-plus" ></span>
         </a>
-        <a class="btn btn-default pull-right" ng-click="removeBook({id: book._id, index: index})" ng-if="remove == true" >
+        <a class="btn btn-default pull-right" ng-click="removeBook({id: book._id, index: index})" ng-if="library == true" >
             <span class="glyphicon glyphicon-remove" ></span>
         </a>
         <a href="details/{{book.googleId}}" class="pull-left" >

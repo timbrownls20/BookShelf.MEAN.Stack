@@ -15,7 +15,7 @@
     </div>
     <div class="row" ng-repeat="item in vm.library | orderBy:'title'" ng-if="$index % 3 == 0">
         <div class="col-md-4 portfolio-item" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-init="item = vm.library[i]">
-            <book-summary book="item" remove="true" index="i" remove-book="vm.removeBook(id, index)" test-method="vm.testMethod()" ></book-summary>
+            <book-summary book="item" index="i" library="true" remove-book="vm.removeBook(id, index)"  ></book-summary>
             <debug-display display="item"></debug-display>
         </div>
     </div>

@@ -21,7 +21,7 @@
     <div infinite-scroll="vm.loadMore()" infinite-scroll-distance="0" infinite-scroll-immediate-check='false'>
         <div class="row" ng-repeat="item in vm.searchResults.items" ng-if="$index % 3 == 0">
             <div class="col-md-4 portfolio-item" ng-repeat="i in [$index, $index + 1, $index + 2]" ng-init="item = vm.searchResults.items[i]">
-                <book-summary book="item" addtolibrary="true" index="i"></book-summary>
+                <book-summary book="item" index="i" library="false"></book-summary>
             </div>
         </div>
          <debug-display display="vm.rawResponse"></debug-display>

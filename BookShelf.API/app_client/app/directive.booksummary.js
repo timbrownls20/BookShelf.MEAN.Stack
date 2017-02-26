@@ -8,12 +8,15 @@
               scope:
               {
                   book : '=book',
-                  addtolibrary : '=addtolibrary',
-                  remove : '=remove',
                   index : '=index',
+                  library: '=library',
                   removeBook : '&removeBook'
               },
-              templateUrl: "/views/directives/bookSummary.html"
+              templateUrl: "/views/directives/bookSummary.html",
+              link: function(scope, elem, attrs) {
+                    var i = scope;
+
+              }
           };
       }]);
 
