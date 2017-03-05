@@ -24,7 +24,7 @@
 
             bookPersistService.get(id)
                 .then(function (response) {
-                    vm.book = response.data;
+                    vm.book = response.data[0];
                 });
         };
 

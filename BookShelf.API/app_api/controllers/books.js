@@ -50,7 +50,20 @@ module.exports.booksList = function(req, res) {
 
 module.exports.booksRead = function(req, res) {
     console.log('retrieving book', req.params);
-    sendJSONresponse(res, 200, {message: "test"});
+    
+    book.find({_id: req.params.bookid}, function(err, book) {
+                
+        if (err) {
+            console.log(err);
+            sendJSONresponse(res, 400, err);
+        }   
+        else {
+            console.log(book);
+            sendJSONresponse(res, 200, book);
+        }
+    });
+    
+    
 }
 
 module.exports.booksUpdate = function(req, res) {
