@@ -1,6 +1,6 @@
 
-<!--<h2>Is library book {{library}}</h2>-->
 
+<!--<h1>Debug: {{vm.detailsLink}}</h1>-->
 <div ng-if="book != null">  
     <div class="clearfix">                
         <a class="btn btn-default pull-right" href="library-add/{{book.googleId}}" ng-if="library == false">
@@ -9,7 +9,8 @@
         <a class="btn btn-default pull-right" ng-click="removeBook({id: book._id, index: index})" ng-if="library == true" >
             <span class="glyphicon glyphicon-remove" ></span>
         </a>
-        <a href="details/{{book.googleId}}" class="pull-left" >
+        <!--<a href="details/{{book.googleId}}" class="pull-left" >-->
+        <a href="{{vm.detailsLink}}" class="pull-left" >
             <img class="imageClip" src="{{book.thumbnail}}" alt="">
         </a>
     </div>

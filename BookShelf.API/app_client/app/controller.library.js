@@ -20,6 +20,14 @@
                 });
         };
 
+        this.getLibraryBook = function() {
+
+            bookPersistService.get(id)
+                .then(function (response) {
+                    vm.book = response.data;
+                });
+        };
+
         this.findBook = function() {
 
             console.log('findBook');

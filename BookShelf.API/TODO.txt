@@ -1,8 +1,6 @@
 DEV
-split filters into separate files
 ratings control
 dates started and finished for library
-create directive for book details
 
 BUGS
 remove from library update doesn't work properly

@@ -12,7 +12,7 @@
             controllerAs: 'vm'
         })
         .when("/details/:id", {
-            templateUrl: '/views/details.html',
+            templateUrl: '/views/search-details.html',
             controller: 'detailsController',
             controllerAs: 'vm'
         })
@@ -26,6 +26,16 @@
             controller: 'libraryController',
             controllerAs: 'vm'
         })
+        .when("/library-details/:id", {
+            templateUrl: "/views/library-details.html",
+            controller: 'libraryController',
+            controllerAs: 'vm'
+        })
+        // .when("/library-details/:id", {
+        //     templateUrl: "/views/library-details.html",
+        //     controller: 'libraryController',
+        //     controllerAs: 'vm'
+        // })
         .otherwise({ redirectTo : "/" });
 
         $locationProvider.html5Mode(true); //.hashPrefix('!');

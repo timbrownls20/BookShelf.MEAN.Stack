@@ -21,8 +21,11 @@
             return returnValue;
 
             function projectToArray(element){
-                var projection = element[propertyName];
-                returnValue.push(projection);
+
+                if(element){
+                    var projection = element[propertyName];
+                    returnValue.push(projection);
+                }
             }
         };
       });

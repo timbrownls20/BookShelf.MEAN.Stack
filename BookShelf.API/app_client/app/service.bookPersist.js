@@ -8,6 +8,11 @@
         var serviceRoot = appConfig.apiRoot;
         var service = this;
 
+        this.get = function(id) {
+            var url = serviceRoot + "book/" + id;
+            return $http.get(url);
+        };
+
         this.list = function() {
             var url = serviceRoot + "books";
             return $http.get(url);
