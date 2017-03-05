@@ -10,10 +10,14 @@
         vm.title = 'detailsController';
         var id = $routeParams.id;
         
-        bookSearchService.get(id)
+        this.getBookDetails = function()
+        {
+            bookSearchService.get(id)
             .then(function (response) {
                 vm.book = bookPersistService.map(response.data);
             });
 
+        }
+       
     }])
 })();

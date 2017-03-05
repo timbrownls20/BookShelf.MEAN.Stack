@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-md-8">
+        <img src="{{book.thumbnail}}" alt="">
+        <h2>{{vm.book.title}}</h2>
+        <h4>{{vm.book.authors | projectobject: 'name' | stringconcat:', '}}</h4>
+        
+        <div ng-bind-html="book.description | rawhtml"></div>
+    </div>
+</div>
+<debug-display display="book"></debug-display>

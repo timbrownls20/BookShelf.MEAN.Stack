@@ -1,6 +1,9 @@
-﻿<div class="container">
+﻿<div class="container" ng-init="vm.getBookDetails()">
 
-    <div class="row">
+    <book-detail book="vm.book"></book-detail>
+    
+
+    <!--<div class="row">
         <div class="col-md-8">
             <img src="{{vm.book.thumbnail}}" alt="">
             <h2>{{vm.book.title}}</h2>
@@ -9,5 +12,5 @@
             <div ng-bind-html="vm.book.description | rawhtml"></div>
         </div>
     </div>
-    <debug-display display="vm.book"/>
+    <debug-display display="vm.book"></debug-display>-->
 </div>
